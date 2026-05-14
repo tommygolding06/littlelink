@@ -1,35 +1,17 @@
 ---
-import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-<Nav />
-  <head>
-    <meta charset="UTF-8" />
-    <title>Pasta</title>
-  </head>
-
-  <body>
+<Layout title="Pasta">
+  <section>
     <h1>Pasta</h1>
     <p>college radio host + internet fool</p>
-  </body>
-</html>
+  </section>
 
-<style>
-  body {
-    background: #0b0b0b;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 4rem;
-  }
-
-  h1 {
-    font-size: 5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #aaa;
-  }
-</style>
+  <section>
+    <h2>what this is</h2>
+    <p>
+      a tiny corner of the internet for music, dumb jokes, and whatever else I am currently messing with.
+    </p>
+  </section>
+</Layout>

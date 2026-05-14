@@ -1,23 +1,39 @@
-<nav>
-  <a href="/">home</a>
-  <a href="/links">links</a>
-  <a href="/now">now</a>
+<nav class="nav">
+  <a href="/" class="brand">Pasta</a>
+
+  <div class="links">
+    <a href="/links">links</a>
+    <a href="/now">now</a>
+  </div>
 </nav>
 
 <style>
-  nav {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand {
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .links {
     display: flex;
     gap: 1rem;
-    margin-bottom: 3rem;
   }
 
-  a {
-    color: white;
+  .links a {
     text-decoration: none;
-    opacity: 0.7;
+    color: var(--muted);
   }
 
-  a:hover {
-    opacity: 1;
+  .links a:hover {
+    color: var(--text);
   }
 </style>

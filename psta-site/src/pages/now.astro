@@ -1,35 +1,13 @@
 ---
-import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
+import NowPlaying from "../components/NowPlaying.astro";
 ---
 
-<Nav />
+<Layout title="Now - Pasta">
+  <section>
+    <h1>Now</h1>
+    <p>what I am up to right this second.</p>
+  </section>
 
-<h1>Now</h1>
-
-<p>Listening to:</p>
-<ul>
-  <li>whatever album you're obsessed with</li>
-</ul>
-
-<p>Playing:</p>
-<ul>
-  <li>some game</li>
-</ul>
-
-<p>Working on:</p>
-<ul>
-  <li>making this website less ugly</li>
-</ul>
-
-<style>
-  body {
-    background: #0b0b0b;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 4rem;
-  }
-
-  a {
-    color: #7dd3fc;
-  }
-</style>
+  <NowPlaying />
+</Layout>

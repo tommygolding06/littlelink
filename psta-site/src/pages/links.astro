@@ -1,26 +1,46 @@
 ---
-import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Nav />
+<Layout title="Links - Pasta">
+  <section>
+    <h1>Links</h1>
+    <p>places I actually use, unfortunately.</p>
+  </section>
 
-<h1>Links</h1>
+  <section>
+    <h2>social / music / whatever</h2>
 
-<ul>
-  <li><a href="https://bsky.app">Bluesky</a></li>
-  <li><a href="https://last.fm">Last.fm</a></li>
-  <li><a href="https://letterboxd.com">Letterboxd</a></li>
-</ul>
+    <ul>
+      <li>
+        <a
+          href="https://bsky.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Bluesky
+        </a>
+      </li>
 
-<style>
-  body {
-    background: #0b0b0b;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 4rem;
-  }
+      <li>
+        <a
+          href="https://last.fm"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Last.fm
+        </a>
+      </li>
 
-  a {
-    color: #7dd3fc;
-  }
-</style>
+      <li>
+        <a
+          href="https://letterboxd.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Letterboxd
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

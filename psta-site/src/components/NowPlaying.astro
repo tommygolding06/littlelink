@@ -1,0 +1,45 @@
+---
+const username = import.meta.env.PUBLIC_LASTFM_USER;
+const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY;
+---
+
+<div class="card">
+  <h2>currently listening</h2>
+  <p id="track">loading...</p>
+</div>
+
+<script define:vars={{ username, apiKey }}>
+  async function loadTrack() {
+    const trackEl = document.getElementById("track");
+    if (!trackEl || !username || !apiKey) {
+      trackEl.textContent = "missing Last.fm config";
+      return;
+    }
+
+    const url =
+      `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(username)}&api_key=${encodeURIComponent(apiKey)}&format=json&limit=1`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const track = data?.recenttracks?.track?.[0];
+
+      if (!track) {
+        trackEl.textContent = "no recent tracks found";
+        return;
+      }
+
+      const artist = track.artist?.["#text"] ?? "Unknown artist";
+      const name = track.name ?? "Unknown track";
+      const isNowPlaying = track["@attr"]?.nowplaying === "true";
+
+      trackEl.textContent = isNowPlaying
+        ? `▶ ${artist} — ${name}`
+        : `last played: ${artist} — ${name}`;
+    } catch (err) {
+      trackEl.textContent = "couldn't load track";
+    }
+  }
+
+  loadTrack();
+</script>
